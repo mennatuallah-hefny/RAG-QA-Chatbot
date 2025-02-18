@@ -1,4 +1,4 @@
-# End-to-End-Medical-Chatbot-using-llama2
+# RAG QA Chatbot
 
 ## Steps to run the project
 
