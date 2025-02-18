@@ -1,5 +1,15 @@
 # RAG QA Chatbot
 
+<!---
+0. Search for the reason of the reponse latency
+1. Replace llama or suggested model to solve the latency
+2. Demo
+3. Project overview
+4. Installation steps
+--->
+
+
+
 ## Steps to run the project
 
 #### 1) Create virtual environment 
