@@ -5,7 +5,9 @@ langchain
 langchain-community
 langchain_pinecone
 langchain-huggingface
-flask
+fastapi
+uvicorn
+streamlit
 pypdf
 python-dotenv
 Werkzeug
