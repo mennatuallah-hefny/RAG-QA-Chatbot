@@ -3,75 +3,78 @@
 [![LangChain](https://img.shields.io/badge/LangChain-0.0.1-yellowgreen)](https://github.com/hwchase17/langchain)
 [![Pinecone](https://img.shields.io/badge/Pinecone-Vector%20DB-lightgrey?logo=pinecone)](https://www.pinecone.io/)
 [![Llama 2](https://img.shields.io/badge/Meta-Llama%202-critical?logo=meta)](https://ai.meta.com/resources/models-and-libraries/llama-downloads/)
+
 # RAG QA Chatbot
 
 <div>
-    <a href="https://www.loom.com/share/7c60a5cb31b04c5995e440762d6509b1">
-      <p>RAG QA Chatbot - Watch Video</p>
-    </a>
-    <a href="https://www.loom.com/share/7c60a5cb31b04c5995e440762d6509b1">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/7c60a5cb31b04c5995e440762d6509b1-ba3bbe6b4767cf63-full-play.gif">
-    </a>
-  </div>
-
+  <a href="https://www.loom.com/share/7c60a5cb31b04c5995e440762d6509b1">
+    <p>RAG QA Chatbot - Watch the Demo Video</p>
+  </a>
+  <a href="https://www.loom.com/share/7c60a5cb31b04c5995e440762d6509b1">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/7c60a5cb31b04c5995e440762d6509b1-ba3bbe6b4767cf63-full-play.gif" alt="Demo Video Thumbnail">
+  </a>
+</div>
 
 ## Project Overview
 
-The **RAG QA Chatbot** is a Retrieval-Augmented Generation system designed to answer questions using content from provided documents. The project leverages:
-- **FastAPI** for the backend API,
-- **Streamlit** for the frontend UI,
-- **LangChain** to manage document retrieval and interaction with the LLM,
-- **Meta Llama2** (quantized model) for generating answers,
-- **Pinecone** for vector storage and retrieval.
+The **RAG QA Chatbot** is a Retrieval-Augmented Generation system that answers questions by leveraging content extracted from provided documents. This project combines several powerful technologies:
+- **FastAPI** for building a robust backend API.
+- **Streamlit** for an interactive frontend UI.
+- **LangChain** to manage document retrieval and integrate with the language model.
+- **Meta's Llama 2 (quantized)** to generate intelligent responses.
+- **Pinecone** for efficient vector storage and retrieval.
 
-**For the demo, the document used is The Gale Encyclopedia of Medicine book.**
+> **Demo Note:** The demonstration uses *The Gale Encyclopedia of Medicine* as the source document.
 
-## Steps to run the project
+## Setup and Installation
 
-#### 1) Create virtual environment 
+Follow these steps to set up and run the chatbot on your local machine.
+
+### 1. Create a Virtual Environment
+
+Create a new conda environment with Python 3.10:
 ```bash
-$ conda create -n `environment_name` python=3.10 -y
+conda create -n <environment_name> python=3.10 -y
 ```
 
-#### 2) Activate environment 
+### 2. Activate the Environment
+
+Activate your newly created environment:
 ```bash
-$ conda activate `environment_name`
+conda activate <environment_name>
 ```
 
-### 3) Install requirements  
+### 3. Install Dependencies
+
+Install the required Python packages:
 ```bash
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-### Create a `.env` file in the root directory and add your Pinecone credentials as follows:
+### 4. Configure Your Environment Variables
+
+Create a `.env` file in the root directory of the project and add your Pinecone API key:
 ```ini
-PINECONE_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+PINECONE_API_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
-### Download the quantize model from the link provided in model folder & keep the model in the model directory:
+### 5. Download the Quantized Llama 2 Model
 
-```ini
-## Download the Llama 2 Model:
+Download the model file named `llama-2-7b-chat.ggmlv3.q4_0.bin` from the following link:
+[Download Llama 2 Model](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/tree/main)
 
-llama-2-7b-chat.ggmlv3.q4_0.bin
+Place the downloaded model in the `model` directory of the project.
 
+### 6. Launch the Backend Server
 
-## From the following link:
-https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/tree/main
-```
-
+Start the FastAPI server using Uvicorn:
 ```bash
-# run the following command
 uvicorn main:app --host localhost --port 5000 --reload
 ```
 
+### 7. Start the Frontend Application
+
+Run the Streamlit app to launch the chatbot interface:
 ```bash
-# Finally run the following command
 streamlit run app_streamlit.py
 ```
-
-
-
-
-
-
